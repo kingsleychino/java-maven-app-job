@@ -30,13 +30,16 @@ pipeline {
                 }
             }
             steps {
-                echo 'testing the application...'
+                script {
+                    gv.testApp()
+                }
             }
         }
         stage("deploy") {
             steps {
-                echo 'deploying the application...'
-                echo "deploy version ${params.VERSION}"
+                script {
+                    gv.deployApp()
+                }
             }
         }
     }
