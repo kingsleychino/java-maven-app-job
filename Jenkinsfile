@@ -1,3 +1,4 @@
+def gv
 
 pipeline {
     agent any
@@ -7,11 +8,18 @@ pipeline {
     }
 
     stages {
+        stage("init") {
+            steps {
+                script {
+                    gv = load "script.groovy"
+                }
+            }
+        }
+        
         stage("build jar") {
             steps {
                 script {
-                    echo "building the application..."
-                    sh 'mvn package'
+                    gv.buildjar()
                 }
             }
         }
