@@ -27,7 +27,6 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    echo "building the image..."
                     gv.buildImage()
                 }
             }
@@ -36,7 +35,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    echo "deploying the application..."
+                    gv.deployApp()
                 }
             }
         }
