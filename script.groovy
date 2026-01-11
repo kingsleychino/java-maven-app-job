@@ -1,13 +1,15 @@
-def buildApp() {
-  echo 'Building the application...'
+def buildJar() {
+  echo 'building the application...'
+  sh 'mvn package'
 }
 
-def testApp() {
-  echo 'testing the application...'
+def buildImage() {
+  echo 'building the application...'
+  sh 'mvn package'
 }
 
 def deployApp() {
   echo 'deploying the application...'
-  echo "deploying version ${params.VERSION}"
 }
+
 return this
