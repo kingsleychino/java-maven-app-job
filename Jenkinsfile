@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     echo "building the image..."
-                    
+                    gv.buildImage()
                 }
             }
         }
